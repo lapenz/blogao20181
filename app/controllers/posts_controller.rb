@@ -7,6 +7,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def homepage
+    @posts = Post.all.order("created_at desc")
+    #byebug
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
