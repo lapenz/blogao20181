@@ -8,8 +8,9 @@ class PostsController < ApplicationController
   end
 
   def homepage
-    @posts = Post.all.order("created_at desc")
-    #byebug
+    @posts = Post.recents.order("created_at desc")
+    @posts = @posts.where(category: params[:category_id]) unless params[:category_id].blank?
+    @posts = @posts.where("UPPER(text) like ?", "%#{params[:search_term].to_s.upcase}%") unless params[:search_term].blank?
   end
 
   # GET /posts/1
@@ -74,6 +75,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:text, :subject, :title, :author_id)
+      params.require(:post).permit(:text, :subject, :title, :author_id, :category_id)
     end
 end

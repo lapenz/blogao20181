@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :categories
   root 'posts#homepage'
 
   resources :authors
   resources :posts do
     collection do
       get 'homepage'
+      post 'homepage'
     end
 
   end
