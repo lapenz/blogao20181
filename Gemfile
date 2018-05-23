@@ -34,6 +34,10 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 
+# Upload de arquivos
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
