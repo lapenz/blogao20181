@@ -34,6 +34,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 
+# Autenticacao
+gem 'devise'
+
 # Upload de arquivos
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
