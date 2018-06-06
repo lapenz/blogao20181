@@ -37,6 +37,9 @@ gem 'jquery-rails'
 # Autenticacao
 gem 'devise'
 
+# Permissoes
+gem 'cancancan', '~> 2.0'
+
 # Upload de arquivos
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
